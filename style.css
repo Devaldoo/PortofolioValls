@@ -726,24 +726,81 @@ footer {
 /* ==========================================
    RESPONSIVE DESIGN (TABLET & MOBILE)
 ========================================== */
+
 @media (max-width: 1024px) {
-    .hero-container, .about-container-grid {
+    .hero-container {
         grid-template-columns: 1fr;
     }
-    .skills-grid, .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+    
+    /* Perbaikan bagian Tentang Saya agar menumpuk di layar medium/tablet */
+    .about-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mengatur ulang tombol hero agar rapi ke bawah di HP */
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Statistik hero menjadi 1 kolom atau 3 kolom kecil yang pas */
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .stat-item {
+        padding: 10px;
+    }
+    
+    .stat-number {
+        font-size: 1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
     }
 }
 
 @media (max-width: 640px) {
-    .skills-grid, .projects-grid {
+    /* KUNCI UTAMA: Paksa Projects dan Skills jadi 1 kolom di HP */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about-subgrid-4 {
         grid-template-columns: 1fr;
     }
+
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
+
+    .hero-content h2 {
+        font-size: 1.1rem;
+    }
+
     .nav-links {
-        display: none;
+        display: none; /* Atau sesuaikan jika ingin buat menu hamburger nantinya */
+    }
+    
+    .section {
+        padding: 60px 5%;
     }
 }
 
