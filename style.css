@@ -1139,3 +1139,16 @@ footer {
     opacity: 0;
     visibility: hidden;
 }
+
+/* PAKSA MUTLAK 1 KOLOM UNTUK PROYEK DI SEMUA LAYAR DI BAWAH 992px */
+@media screen and (max-width: 992px) {
+    div.projects-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    div.projects-grid .project-card {
+        width: 100% !important;
+        margin-bottom: 16px !important;
+    }
+}
